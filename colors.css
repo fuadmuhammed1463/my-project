@@ -641,3 +641,205 @@ a:hover { color: #8B5CF6; }
 
 /* === HIDDEN UTILITY === */
 .hidden { display: none !important; }
+
+/* =============================================
+   MOBILE RESPONSIVE — AURA MARKETPLACE
+   Breakpoints: 768px (tablet), 480px (phone)
+   ============================================= */
+
+/* === HAMBURGER BUTTON === */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 200;
+}
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #F8FAFC;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* === TABLET — 768px === */
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .navbar {
+        padding: 16px 20px;
+        flex-wrap: wrap;
+        gap: 0;
+        position: relative;
+    }
+
+    .hamburger { display: flex; }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        background: #0B0E14;
+        border-top: 1px solid #334155;
+        padding: 10px 0;
+        order: 3;
+    }
+    .nav-links.open { display: flex; }
+
+    .nav-links li { width: 100%; }
+    .nav-links a {
+        display: block;
+        padding: 12px 20px;
+        font-size: 1rem;
+        border-bottom: 1px solid #334155;
+    }
+    .nav-links li:last-child a { border-bottom: none; }
+
+    .nav-actions { gap: 8px; }
+    .btn-ghost { padding: 8px 12px; font-size: 0.85rem; }
+    .btn-primary { padding: 8px 14px; font-size: 0.85rem; }
+    #user-greeting { display: none; }
+
+    /* Hero */
+    .hero { padding: 50px 20px 40px; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero-content p { font-size: 1rem; }
+
+    .hero-search { flex-direction: column; }
+    .hero-search input { width: 100%; }
+    .hero-search .btn-primary { width: 100%; padding: 12px; }
+
+    .hero-stats {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .stat-card {
+        flex: 1;
+        min-width: 120px;
+        padding: 16px 18px;
+    }
+    .stat-num { font-size: 1.4rem; }
+
+    /* Sections */
+    .section { padding: 40px 20px; }
+    .section-title { font-size: 1.3rem; }
+
+    /* Categories */
+    .categories {
+        gap: 8px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 6px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .categories::-webkit-scrollbar { display: none; }
+    .chip { white-space: nowrap; flex-shrink: 0; }
+
+    /* Listings grid */
+    .listings-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    /* Steps */
+    .steps {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .step-arrow {
+        transform: rotate(90deg);
+        font-size: 1.2rem;
+        align-self: center;
+    }
+    .step { min-width: unset; width: 100%; }
+
+    /* CTA Banner */
+    .cta-banner {
+        margin: 40px 20px;
+        padding: 40px 24px;
+    }
+    .cta-banner h2 { font-size: 1.5rem; }
+    .cta-banner p { font-size: 0.95rem; }
+
+    /* Footer */
+    .footer { padding: 36px 20px; }
+    .footer-links { flex-wrap: wrap; gap: 14px; justify-content: center; }
+
+    /* Modal */
+    .modal {
+        margin: 0 12px;
+        padding: 28px 20px;
+        max-height: 85vh;
+    }
+}
+
+/* === PHONE — 480px === */
+@media (max-width: 480px) {
+
+    /* Hero */
+    .hero { padding: 36px 16px 30px; }
+    .hero-content h1 { font-size: 1.8rem; letter-spacing: -0.5px; }
+    .hero-tag { font-size: 0.75rem; }
+
+    .hero-stats { flex-direction: column; gap: 10px; }
+    .stat-card { width: 100%; flex-direction: row; justify-content: space-between; align-items: center; padding: 14px 18px; }
+    .stat-num { font-size: 1.3rem; }
+
+    /* Sections */
+    .section { padding: 30px 16px; }
+
+    /* Listings — single column on small phones */
+    .listings-grid { grid-template-columns: 1fr; }
+
+    .listings-header { flex-direction: column; gap: 4px; }
+
+    /* Card */
+    .card-img { height: 140px; }
+    .card-body { padding: 12px; }
+    .card-body h3 { font-size: 0.95rem; }
+    .btn-book { padding: 10px; font-size: 0.9rem; }
+
+    /* CTA */
+    .cta-banner { margin: 30px 16px; padding: 32px 18px; }
+    .cta-banner h2 { font-size: 1.3rem; }
+    .btn-primary.btn-lg { padding: 12px 24px; font-size: 0.95rem; width: 100%; }
+
+    /* Footer */
+    .footer { padding: 28px 16px; }
+    .footer-tagline { font-size: 0.82rem; }
+    .footer-copy { font-size: 0.75rem; }
+
+    /* Navbar actions — hide Log In on very small screens */
+    #open-login { display: none; }
+
+    /* Toast — full width on mobile */
+    .toast {
+        left: 16px;
+        right: 16px;
+        transform: none;
+        text-align: center;
+        white-space: normal;
+        font-size: 0.85rem;
+    }
+
+    /* Modal */
+    .modal {
+        margin: 0 8px;
+        padding: 24px 16px;
+        border-radius: 12px;
+    }
+    .auth-form h2 { font-size: 1.2rem; }
+    .form-group input,
+    .form-group select { font-size: 1rem; padding: 12px 14px; }
+    .btn-full { padding: 13px; font-size: 1rem; }
+}
