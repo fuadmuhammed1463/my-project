@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Marketplace</title>
+    <link rel="icon" type="image/x-icon" href="./LOGO.png">
+    <link rel="stylesheet" href="./colors.css">
+</head>
+<body id="top">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="#top" class="nav-logo">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="32" height="32" rx="8" fill="#8B5CF6"/>
+                <polygon points="18,4 10,18 16,18 14,28 22,14 16,14" fill="#F8FAFC"/>
+            </svg>
+            <span>Aura</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#listings">Browse</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#" id="open-list-modal">List an Item</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="btn-ghost" id="open-login">Log In</button>
+            <button class="btn-primary" id="open-register">Register</button>
+            <div class="user-menu hidden" id="user-menu">
+                <span id="user-greeting"></span>
+                <button class="btn-ghost" id="logout-btn">Log Out</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">● Hyperlocal Rentals</span>
+            <h1>Rent Anything,<br><span class="violet">From Your Community.</span></h1>
+            <p>Borrow high-end cameras, gaming consoles, luxury camping gear, electric scooters & more — from real people near you.</p>
+            <div class="hero-search">
+                <input type="text" id="search-input" placeholder="Search for cameras, PS5, scooters..." />
+                <button class="btn-primary" id="search-btn">Search</button>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <span class="stat-num" id="stat-items">0</span>
+                <span class="stat-label">Items Available</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-num" id="stat-owners">0</span>
+                <span class="stat-label">Verified Owners</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-num" id="stat-cities">0</span>
+                <span class="stat-label">Cities Active</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section" id="listings">
+        <h2 class="section-title">Browse by Category</h2>
+        <div class="categories" id="category-filters"></div>
+    </section>
+
+    <!-- FEATURED LISTINGS -->
+    <section class="section">
+        <div class="listings-header">
+            <h2 class="section-title" id="listings-title">All Listings</h2>
+            <span class="listings-count" id="listings-count"></span>
+        </div>
+        <div class="listings-grid" id="listings-grid"></div>
+        <p class="no-results hidden" id="no-results">No items found. Try a different search or category.</p>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how-it-works">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps">
+            <div class="step"><div class="step-icon">🔍</div><h3>Find</h3><p>Search for items near you by category, price, or availability.</p></div>
+            <div class="step-arrow">→</div>
+            <div class="step"><div class="step-icon">📅</div><h3>Book</h3><p>Pick your dates and send a rental request to the owner.</p></div>
+            <div class="step-arrow">→</div>
+            <div class="step"><div class="step-icon">🤝</div><h3>Meet & Rent</h3><p>Meet locally, pick up the item, and enjoy your rental.</p></div>
+            <div class="step-arrow">→</div>
+            <div class="step"><div class="step-icon">⭐</div><h3>Return & Review</h3><p>Return the item and leave a review to build community trust.</p></div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <h2>Have gear collecting dust?</h2>
+        <p>List it on Aura and earn money every time someone rents it.</p>
+        <button class="btn-primary btn-lg" id="cta-list-btn">Start Earning Today</button>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <a href="#top" class="footer-logo">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="32" height="32" rx="8" fill="#8B5CF6"/>
+                <polygon points="18,4 10,18 16,18 14,28 22,14 16,14" fill="#F8FAFC"/>
+            </svg>
+            <span>Aura</span>
+        </a>
+        <p class="footer-tagline">Community-powered rentals. Premium gear. Zero ownership.</p>
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="footer-socials">
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter" class="social-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </a>
+            <a href="https://github.com" target="_blank" aria-label="GitHub" class="social-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </a>
+        </div>
+        <p class="footer-copy">© 2025 Aura Marketplace. All rights reserved.</p>
+    </footer>
+
+    <!-- ===== MODALS ===== -->
+
+    <!-- AUTH MODAL -->
+    <div class="modal-overlay hidden" id="auth-modal">
+        <div class="modal">
+            <button class="modal-close" id="close-auth">✕</button>
+            <div class="modal-tabs">
+                <button class="tab-btn active" id="tab-login">Log In</button>
+                <button class="tab-btn" id="tab-register">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <form class="auth-form" id="login-form">
+                <h2>Welcome back</h2>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="login-email" placeholder="you@example.com" required />
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="login-password" placeholder="••••••••" required />
+                </div>
+                <p class="form-error hidden" id="login-error"></p>
+                <button type="submit" class="btn-primary btn-full">Log In</button>
+            </form>
+
+            <!-- Register Form -->
+            <form class="auth-form hidden" id="register-form">
+                <h2>Create your account</h2>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="reg-name" placeholder="Jane Doe" required />
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="reg-email" placeholder="you@example.com" required />
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="reg-password" placeholder="Min. 6 characters" required />
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" id="reg-city" placeholder="Brooklyn, NY" required />
+                </div>
+                <p class="form-error hidden" id="register-error"></p>
+                <button type="submit" class="btn-primary btn-full">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- LIST ITEM MODAL -->
+    <div class="modal-overlay hidden" id="list-modal">
+        <div class="modal">
+            <button class="modal-close" id="close-list">✕</button>
+            <form class="auth-form" id="list-form">
+                <h2>List Your Item</h2>
+                <div class="form-group">
+                    <label>Item Name</label>
+                    <input type="text" id="list-name" placeholder="e.g. Sony A7 IV Camera" required />
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="list-category" required>
+                        <option value="">Select category</option>
+                        <option value="Cameras">📷 Cameras</option>
+                        <option value="Gaming">🎮 Gaming</option>
+                        <option value="Camping">⛺ Camping</option>
+                        <option value="Scooters">🛴 Scooters</option>
+                        <option value="Audio">🎵 Audio</option>
+                        <option value="Tech">💻 Tech</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Price per Day ($)</label>
+                    <input type="number" id="list-price" placeholder="e.g. 45" min="1" required />
+                </div>
+                <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" id="list-location" placeholder="e.g. Brooklyn, NY" required />
+                </div>
+                <p class="form-error hidden" id="list-error"></p>
+                <button type="submit" class="btn-primary btn-full">Publish Listing</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- BOOKING MODAL -->
+    <div class="modal-overlay hidden" id="booking-modal">
+        <div class="modal">
+            <button class="modal-close" id="close-booking">✕</button>
+            <div id="booking-content"></div>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast hidden" id="toast"></div>
+
+    <script src="./colors.js"></script>
+</body>
+</html>
